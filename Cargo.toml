@@ -1,0 +1,26 @@
+[package]
+name = "astar-rna-fold"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ragnar Groot Koerkamp"]
+description = "An RNA folder based on A*."
+repository = "https://github.com/RagnarGrootKoerkamp/astar-rna-fold"
+license = "MPL-2.0"
+keywords = ["rna-folding", "A*", "bioinformatics", "cli"]
+readme = "README.org"
+categories = ["science"]
+default-run = "astar-rna-fold"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.release]
+#lto = true
+lto = "thin"
+incremental = true
+debug = true
+opt-level = 3
+
+[dependencies]
+rand = "*"
+rand_chacha = "*"
+plotters = "*"
+itertools = "*"

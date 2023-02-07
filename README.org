@@ -1,0 +1,12 @@
+#+TITLE: A* RNA-Folding
+
+An exploration/failed attempt of RNA folding using A*, similar to [[A*PA][https://github.com/ragnargrootkoerkamp/astar-pairwise-aligner]].
+
+I considered the simplest variant where the number of matched complementary
+characters is maximized, and no other penalties/scores.
+
+It turns out that in this setting, the score of the optimal alignment of random
+strings is actually quite high and close to the score of the optimal alignment
+of strings with structure. This means that it will be hard to exploit structure
+to improve the alignment, and A* can not easily disregard alignments of noisy
+regions without.
